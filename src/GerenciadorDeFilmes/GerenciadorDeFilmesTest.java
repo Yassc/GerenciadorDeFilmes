@@ -95,4 +95,15 @@ public class GerenciadorDeFilmesTest {
 
         gerenciador.avaliarFilme("Interstellar", 11.0);
     }
+    @Test
+    public void testMarcarComoAssistidoComSucesso() throws filmeNaoEncontradoException {
+        GerenciadorDeFilmes gerenciador = new GerenciadorDeFilmes();
+        Filme f = new Filme("Matrix", "Wachowski", 1999, 136);
+        gerenciador.adicionarFilme(f);
+
+        String mensagem = gerenciador.marcarComoAssistido("Matrix");
+
+        assertNotNull(mensagem);
+        assertEquals("O filme Matrix foi marcado como assistido!", mensagem);
+    }
 }
