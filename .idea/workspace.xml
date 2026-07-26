@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ffc0961-3773-469d-9c7d-47e038059ceb" name="Changes" comment="" />
+    <list default="true" id="0ffc0961-3773-469d-9c7d-47e038059ceb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/GerenciadorDeFilmes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GerenciadorDeFilmes.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/GerenciadorDeFilmes/GerenciadorDeFilmesTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +41,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.JanelaPrincipal.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.GerenciadorDeFilmesTest.executor": "Run",
+    "JUnit.GerenciadorDeFilmesTest.testAdicionarEBuscarFilmeComSucesso.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -46,14 +54,18 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "correção",
+    "git-widget-placeholder": "atualizacao",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/yasmi/OneDrive/Documentos/yas/POO/GerenciadorDeFilmes/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -62,6 +74,63 @@
       <recent name="C:\Users\yasmi\OneDrive\Documentos\yas\POO\GerenciadorDeFilmes\.idea\GerenciadorDeFilmes" />
       <recent name="C:\Users\yasmi\OneDrive\Documentos\yas\POO\GerenciadorDeFilmes\.idea" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="GerenciadorDeFilmes" />
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.JanelaPrincipal">
+    <configuration name="JanelaPrincipal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GerenciadorDeFilmes.JanelaPrincipal" />
+      <module name="GerenciadorDeFilmes" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GerenciadorDeFilmes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GerenciadorDeFilmesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GerenciadorDeFilmes" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="GerenciadorDeFilmes" />
+      <option name="MAIN_CLASS_NAME" value="GerenciadorDeFilmes.GerenciadorDeFilmesTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GerenciadorDeFilmesTest.testAdicionarEBuscarFilmeComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GerenciadorDeFilmes" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="GerenciadorDeFilmes" />
+      <option name="MAIN_CLASS_NAME" value="GerenciadorDeFilmes.GerenciadorDeFilmesTest" />
+      <option name="METHOD_NAME" value="testAdicionarEBuscarFilmeComSucesso" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JanelaPrincipal" />
+        <item itemvalue="JUnit.GerenciadorDeFilmesTest" />
+        <item itemvalue="JUnit.GerenciadorDeFilmesTest.testAdicionarEBuscarFilmeComSucesso" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

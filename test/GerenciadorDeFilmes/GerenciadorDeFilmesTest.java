@@ -1,5 +1,6 @@
 package GerenciadorDeFilmes;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -19,7 +20,7 @@ public class GerenciadorDeFilmesTest {
         Filme encontrado = gerenciador.buscarPorTitulo("AVATAR");
 
         assertNotNull(encontrado);
-        assertEquals("James Cameron", encontrado.getDiretor());
+        Assert.assertEquals("James Cameron", encontrado.getDiretor());
     }
 
     @Test
@@ -28,7 +29,7 @@ public class GerenciadorDeFilmesTest {
         Filme f2 = new Filme("matrix", "Lana e Lilly Wachowski", 1999, 136 );
         gerenciador.adicionarFilme(f2);
 
-        Filme f3 = new Filme ("matrix", "Lana e Lilly Wachowski", 2021, 136 );
+        Filme f3 = new Filme("matrix", "Lana e Lilly Wachowski", 2021, 136 );
         gerenciador.adicionarFilme(f3);
 
         assertEquals(2021, gerenciador.buscarPorTitulo("matrix").getAno());
@@ -42,7 +43,7 @@ public class GerenciadorDeFilmesTest {
 
         Filme Encontrado = gerenciador.buscarPorTitulo("LA LA LAND");
         assertNotNull(Encontrado);
-        assertEquals("Damien Chazelle", Encontrado.getDiretor());
+        Assert.assertEquals("Damien Chazelle", Encontrado.getDiretor());
 
     }
 

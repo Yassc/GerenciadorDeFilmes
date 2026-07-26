@@ -91,7 +91,7 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
             }
         }
     }
-    @Override
+
     public Map<String, Filme> getHistoricoAssistidos() {
         return historicoAssistidos;
     }
