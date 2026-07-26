@@ -90,7 +90,7 @@ public class GerenciadorDeFilmesTest {
 
         assertThrows(filmeNaoEncontradoException.class,
                 () -> {
-            gerenciador.adicionarAosFavoritos("Filme Fantasma");
+                    gerenciador.adicionarAosFavoritos("Filme Fantasma");
                 });
     }
     @Test
