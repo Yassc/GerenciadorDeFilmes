@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ffc0961-3773-469d-9c7d-47e038059ceb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/InterfaceGerenciador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorDeFilmes/InterfaceGerenciador.java" afterDir="false" />
-    </list>
+    <list default="true" id="0ffc0961-3773-469d-9c7d-47e038059ceb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +42,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "feature/minha-tela",
+    "git-widget-placeholder": "parte-yasmim",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/yasmi/OneDrive/Documentos/yas/POO/GerenciadorDeFilmes/src",
     "node.js.detected.package.eslint": "true",
