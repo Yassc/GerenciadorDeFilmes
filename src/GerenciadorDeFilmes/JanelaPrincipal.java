@@ -20,15 +20,14 @@ public class JanelaPrincipal extends JFrame {
         }
 
         setTitle("CineManager - Gerenciador de Filmes");
-        setSize(500, 400);
+        setSize(500, 450);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
         getContentPane().setBackground(new Color(44, 62, 80));
-
         setLayout(new BorderLayout(20, 20));
 
-        JLabel lblTitulo = new JLabel("Catálogo de filmes", SwingConstants.CENTER);
+        JLabel lblTitulo = new JLabel("Catálogo de Filmes", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Times New Roman", Font.PLAIN, 50));
         lblTitulo.setForeground(Color.WHITE);
         add(lblTitulo, BorderLayout.CENTER);
@@ -42,19 +41,31 @@ public class JanelaPrincipal extends JFrame {
         JMenuBar barraMenu = new JMenuBar();
         JMenu menuOperacoes = new JMenu("Operações");
 
-        JMenuItem itemCadastrar = new JMenuItem("Cadastrar");
-        JMenuItem itemPesquisar = new JMenuItem("Pesquisar");
+        JMenuItem itemCadastrar = new JMenuItem("Cadastrar Filme");
+        JMenuItem itemPesquisar = new JMenuItem("Pesquisar Filme");
         JMenuItem itemApagar = new JMenuItem("Apagar por Ano");
-        JMenuItem itemSalvar = new JMenuItem("Salvar");
+        JMenuItem itemFavoritar = new JMenuItem("Adicionar aos Favoritos");
+        JMenuItem itemAssistido = new JMenuItem("Marcar como Assistido");
+        JMenuItem itemListarFavoritos = new JMenuItem("Listar Favoritos");
+        JMenuItem itemListarAssistidos = new JMenuItem("Listar Assistidos");
+        JMenuItem itemSalvar = new JMenuItem("Salvar Dados");
 
         menuOperacoes.add(itemCadastrar);
         menuOperacoes.add(itemPesquisar);
         menuOperacoes.add(itemApagar);
         menuOperacoes.addSeparator();
+        menuOperacoes.add(itemFavoritar);
+        menuOperacoes.add(itemListarFavoritos);
+        menuOperacoes.addSeparator();
+        menuOperacoes.add(itemAssistido);
+        menuOperacoes.add(itemListarAssistidos);
+        menuOperacoes.addSeparator();
         menuOperacoes.add(itemSalvar);
 
         barraMenu.add(menuOperacoes);
         setJMenuBar(barraMenu);
+
+        // --- AÇÕES DOS MENUS ---
 
         itemCadastrar.addActionListener(new ActionListener() {
             @Override
@@ -102,11 +113,57 @@ public class JanelaPrincipal extends JFrame {
                         String resultado = sistema.removerPorAno(ano);
                         JOptionPane.showMessageDialog(JanelaPrincipal.this, resultado);
                     } catch (NumberFormatException ex) {
-                        JOptionPane.showMessageDialog(JanelaPrincipal.this, "Digite um ano válido.");
+                        JOptionPane.showMessageDialog(JanelaPrincipal.this, "Digite um ano válido.", "Erro", JOptionPane.ERROR_MESSAGE);
                     } catch (filmeNaoEncontradoException ex) {
                         JOptionPane.showMessageDialog(JanelaPrincipal.this, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                     }
                 }
+            }
+        });
+
+        itemFavoritar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String titulo = JOptionPane.showInputDialog(JanelaPrincipal.this, "Digite o título do filme para favoritar:");
+                if (titulo != null && !titulo.trim().isEmpty()) {
+                    try {
+                        String msg = sistema.adicionarAosFavoritos(titulo);
+                        JOptionPane.showMessageDialog(JanelaPrincipal.this, msg, "Favoritos", JOptionPane.INFORMATION_MESSAGE);
+                    } catch (filmeNaoEncontradoException ex) {
+                        JOptionPane.showMessageDialog(JanelaPrincipal.this, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }
+        });
+
+        itemListarFavoritos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sistema.listarFavoritos();
+                JOptionPane.showMessageDialog(JanelaPrincipal.this, "A lista de favoritos foi exibida no console do terminal!");
+            }
+        });
+
+        itemAssistido.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String titulo = JOptionPane.showInputDialog(JanelaPrincipal.this, "Digite o título do filme assistido:");
+                if (titulo != null && !titulo.trim().isEmpty()) {
+                    try {
+                        String msg = sistema.marcarComoAssistido(titulo);
+                        JOptionPane.showMessageDialog(JanelaPrincipal.this, msg, "Histórico", JOptionPane.INFORMATION_MESSAGE);
+                    } catch (filmeNaoEncontradoException ex) {
+                        JOptionPane.showMessageDialog(JanelaPrincipal.this, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }
+        });
+
+        itemListarAssistidos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sistema.listarAssistidos();
+                JOptionPane.showMessageDialog(JanelaPrincipal.this, "A lista de assistidos foi exibida no console do terminal!");
             }
         });
 
@@ -115,9 +172,9 @@ public class JanelaPrincipal extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     sistema.salvarDados();
-                    JOptionPane.showMessageDialog(JanelaPrincipal.this, "Dados gravados com sucesso via Serializable!");
+                    JOptionPane.showMessageDialog(JanelaPrincipal.this, "Dados gravados com sucesso!");
                 } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(JanelaPrincipal.this, "Erro ao salvar ficheiro: " + ex.getMessage(), "Erro I/O", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(JanelaPrincipal.this, "Erro ao salvar arquivo: " + ex.getMessage(), "Erro I/O", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

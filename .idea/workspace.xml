@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ffc0961-3773-469d-9c7d-47e038059ceb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/GerenciadorDeFilmes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GerenciadorDeFilmes.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/GerenciadorDeFilmes/GerenciadorDeFilmesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +51,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "atualizacao",
+    "git-widget-placeholder": "fix",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/yasmi/OneDrive/Documentos/yas/POO/GerenciadorDeFilmes/src",
     "node.js.detected.package.eslint": "true",
@@ -65,7 +62,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propCompiler"
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
   <component name="RecentsManager">
