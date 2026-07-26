@@ -109,11 +109,30 @@
       <option name="project" value="LOCAL" />
       <updated>1785086750208</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adição da funcionalidade de avaliação de filmes, exeção de nota inválida e criação do teste para esta função. além disso, ajeitei o nome do pacote, porque não estava condizente.">
+      <option name="closed" value="true" />
+      <created>1785086972450</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1785086972450</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adição da funcionalidade de avaliação de filmes, exeção de nota inválida e criação do teste para esta função. além disso, ajeitei o nome do pacote, porque não estava condizente." />

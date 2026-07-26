@@ -1,4 +1,4 @@
-package Projetofinalpoo.GerenciadorDeFilmes;
+package GerenciadorDeFilmes;
 
 import java.io.IOException;
 import java.util.HashMap;

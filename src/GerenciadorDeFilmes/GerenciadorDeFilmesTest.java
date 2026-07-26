@@ -1,4 +1,4 @@
-package Projetofinalpoo.GerenciadorDeFilmes;
+package GerenciadorDeFilmes;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -78,8 +78,8 @@ public class GerenciadorDeFilmesTest {
 
     @Test
     public void testAvaliarFilmeComSucesso() throws filmeNaoEncontradoException, NotaDeAvaliacaoInvalidaException {
-        GerenciadorDeFilmes gerenciador = new Projetofinalpoo.GerenciadorDeFilmes.GerenciadorDeFilmes();
-        Filme f = new Projetofinalpoo.GerenciadorDeFilmes.Filme("Inception", "Christopher Nolan", 2010, 148);
+        GerenciadorDeFilmes gerenciador = new GerenciadorDeFilmes();
+        Filme f = new Filme("Inception", "Christopher Nolan", 2010, 148);
         gerenciador.adicionarFilme(f);
 
         gerenciador.avaliarFilme("Inception", 9.5);

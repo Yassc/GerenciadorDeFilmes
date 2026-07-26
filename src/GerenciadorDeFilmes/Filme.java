@@ -1,4 +1,4 @@
-package Projetofinalpoo.GerenciadorDeFilmes;
+package GerenciadorDeFilmes;
 
 public class Filme implements java.io.Serializable{
 
