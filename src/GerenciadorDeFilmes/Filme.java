@@ -6,6 +6,7 @@ public class Filme implements java.io.Serializable{
     private String diretor;
     private int ano;
     private int duracao;
+    private double avaliacao = -1;
 
     public Filme(String titulo, String diretor, int ano, int duracao){
         this.titulo = titulo;
@@ -41,15 +42,15 @@ public class Filme implements java.io.Serializable{
         return horas + "h" + minutos + "min";
     }
 
-
     //to String
     @Override
     public String toString() {
+        String notaTexto = (avaliacao == -1) ? "Não avaliado" : avaliacao + " / 10.0";
         return "Título: " + this.titulo +
                 "\nDirigido por: " + this.diretor+
                 "\nAno de lançamento: " + this.ano + " (É clássico?" + EhClassico() + ")"+
-                "\nDuração: "+ conversorDuracao() + "(" + this.duracao + "min)";
-
+                "\nDuração: "+ conversorDuracao() + "(" + this.duracao + "min)" +
+                "\nAvaliação: " + notaTexto;
     }
 
     //getters e setters
@@ -84,4 +85,12 @@ public class Filme implements java.io.Serializable{
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+<<<<<<< HEAD
 }
+=======
+
+    public double getAvaliacao() {return avaliacao;}
+
+    public void setAvaliacao(double avaliacao) {this.avaliacao = avaliacao;}
+}
+>>>>>>> 24915a35b8422e3da3cd769b52e2828fcda9f363
