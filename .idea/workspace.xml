@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ffc0961-3773-469d-9c7d-47e038059ceb" name="Changes" comment="Adição da funcionalidade de avaliação de filmes, exeção de nota inválida e criação do teste para esta função. além disso, ajeitei o nome do pacote, porque não estava condizente.">
-      <change beforePath="$PROJECT_DIR$/.idea/GerenciadorDeFilmes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GerenciadorDeFilmes.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/Filme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorDeFilmes/Filme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/InterfaceGerenciador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorDeFilmes/InterfaceGerenciador.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
