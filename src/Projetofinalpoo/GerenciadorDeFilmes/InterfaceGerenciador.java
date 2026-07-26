@@ -55,4 +55,7 @@ public interface InterfaceGerenciador {
      * @throws ClassNotFoundException Se a classe dos objetos gravados não for identificada.
      */
     void recuperarDados() throws IOException, ClassNotFoundException;
+
+    void avaliarFilme(String titulo, double nota) throws filmeNaoEncontradoException, NotaDeAvaliacaoInvalidaException;
+    String buscarFilmesPorNotaMinima(double notaMinima);
 }

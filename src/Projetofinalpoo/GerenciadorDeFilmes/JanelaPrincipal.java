@@ -38,7 +38,6 @@ public class JanelaPrincipal extends JFrame {
         lblSubtitulo.setForeground(Color.LIGHT_GRAY);
         add(lblSubtitulo, BorderLayout.SOUTH);
 
-
         JMenuBar barraMenu = new JMenuBar();
         JMenu menuOperacoes = new JMenu("Operações");
 
@@ -46,10 +45,14 @@ public class JanelaPrincipal extends JFrame {
         JMenuItem itemPesquisar = new JMenuItem("Pesquisar");
         JMenuItem itemApagar = new JMenuItem("Apagar por Ano");
         JMenuItem itemSalvar = new JMenuItem("Salvar");
+        JMenuItem itemAvaliar = new JMenuItem("Avaliar Filme");
+        JMenuItem itemFiltrarNota = new JMenuItem("Filtrar por Nota Mínima");
 
         menuOperacoes.add(itemCadastrar);
         menuOperacoes.add(itemPesquisar);
         menuOperacoes.add(itemApagar);
+        menuOperacoes.add(itemAvaliar);
+        menuOperacoes.add(itemFiltrarNota);
         menuOperacoes.addSeparator();
         menuOperacoes.add(itemSalvar);
 
@@ -84,7 +87,7 @@ public class JanelaPrincipal extends JFrame {
                 if (busca != null && !busca.trim().isEmpty()) {
                     try {
                         Filme f = sistema.buscarPorTitulo(busca);
-                        JOptionPane.showMessageDialog(JanelaPrincipal.this, f.ExibirDetalhes(), "Filme Encontrado", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(JanelaPrincipal.this, f.toString(), "Filme Encontrado", JOptionPane.INFORMATION_MESSAGE);
                     } catch (filmeNaoEncontradoException ex) {
                         JOptionPane.showMessageDialog(JanelaPrincipal.this, "Erro: " + ex.getMessage(), "Não Encontrado", JOptionPane.WARNING_MESSAGE);
                     }
@@ -118,6 +121,40 @@ public class JanelaPrincipal extends JFrame {
                     JOptionPane.showMessageDialog(JanelaPrincipal.this, "Dados gravados com sucesso via Serializable!");
                 } catch (IOException ex) {
                     JOptionPane.showMessageDialog(JanelaPrincipal.this, "Erro ao salvar ficheiro: " + ex.getMessage(), "Erro I/O", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+
+        itemAvaliar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String titulo = JOptionPane.showInputDialog(JanelaPrincipal.this, "Digite o título do filme a avaliar:");
+                if (titulo != null && !titulo.trim().isEmpty()) {
+                    try {
+                        double nota = Double.parseDouble(JOptionPane.showInputDialog(JanelaPrincipal.this, "Digite a nota do filme (0 a 10):"));
+                        sistema.avaliarFilme(titulo, nota);
+                        JOptionPane.showMessageDialog(JanelaPrincipal.this, "Filme '" + titulo + "' avaliado com sucesso com nota " + nota + "!");
+                    } catch (NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(JanelaPrincipal.this, "Erro: A nota precisa ser um número!", "Erro de Input", JOptionPane.ERROR_MESSAGE);
+                    } catch (filmeNaoEncontradoException | NotaDeAvaliacaoInvalidaException ex) {
+                        JOptionPane.showMessageDialog(JanelaPrincipal.this, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }
+        });
+
+        itemFiltrarNota.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String inputNota = JOptionPane.showInputDialog(JanelaPrincipal.this, "Exibir filmes com nota maior ou igual a:");
+                if (inputNota != null) {
+                    try {
+                        double notaMinima = Double.parseDouble(inputNota);
+                        String relatorio = sistema.buscarFilmesPorNotaMinima(notaMinima);
+                        JOptionPane.showMessageDialog(JanelaPrincipal.this, relatorio, "Filmes Bem Avaliados", JOptionPane.INFORMATION_MESSAGE);
+                    } catch (NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(JanelaPrincipal.this, "Digite um valor numérico válido.");
+                    }
                 }
             }
         });
