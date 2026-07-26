@@ -101,11 +101,34 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
         gravador.salvar(this.listaDeFilmes, this.filmesFavoritos);
     }
 
+
     @Override
     public void recuperarDados() throws IOException, ClassNotFoundException {
         GravadorDeDados gravador = new GravadorDeDados();
         this.listaDeFilmes = gravador.recuperarCatalogo();
         this.filmesFavoritos = gravador.recuperarFavoritos();
+    }
+    @Override
+    public void avaliarFilme(String titulo, double nota) throws filmeNaoEncontradoException, NotaDeAvaliacaoInvalidaException {
+        if (nota < 0 || nota > 10) {
+            throw new NotaDeAvaliacaoInvalidaException("A nota deve ser um valor entre 0 e 10.");
+        }
+
+        Filme f = buscarPorTitulo(titulo);
+        f.setAvaliacao(nota);
+    }
+
+    @Override
+    public String buscarFilmesPorNotaMinima(double notaMinima) {
+        String resultado = listaDeFilmes.values().stream()
+                .filter(f -> f.getAvaliacao() >= notaMinima)
+                .map(f -> f.getTitulo() + " (Nota: " + f.getAvaliacao() + ")")
+                .reduce("", (subtotal, element) -> subtotal + element + "\n");
+
+        if (resultado.isEmpty()) {
+            return "Nenhum filme encontrado com nota maior ou igual a " + notaMinima;
+        }
+        return resultado;
     }
 }
 
