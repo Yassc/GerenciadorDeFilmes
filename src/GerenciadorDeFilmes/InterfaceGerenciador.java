@@ -39,6 +39,19 @@ public interface InterfaceGerenciador {
     String adicionarAosFavoritos(String titulo) throws filmeNaoEncontradoException;
 
     /**
+     * Marca um filme do catálogo como assistido e o adiciona ao histórico.
+     * @param titulo O título do filme assistido.
+     * @return Mensagem de confirmação da operação.
+     * @throws filmeNaoEncontradoException Caso o filme não exista no catálogo.
+     */
+    String marcarComoAssistido(String titulo) throws filmeNaoEncontradoException;
+
+    /**
+     * Imprime na tela todos os filmes do histórico de assistidos.
+     */
+    void listarAssistidos();
+
+    /**
      * Imprime na tela todos os filmes favoritados pelo usuário.
      */
     void listarFavoritos();

@@ -7,18 +7,20 @@ import java.util.Map;
 public class GerenciadorDeFilmes implements InterfaceGerenciador {
     private Map<String, Filme> listaDeFilmes;
     private Map<String, Filme> filmesFavoritos;
+    private Map<String, Filme> historicoAssistidos;
 
 
     public GerenciadorDeFilmes() {
         this.listaDeFilmes = new HashMap<>();
         this.filmesFavoritos = new HashMap<>();
+        this.historicoAssistidos = new HashMap<>();
     }
-
+    @Override
     public void adicionarFilme(Filme f){
         this.listaDeFilmes.put(f.getTitulo().toLowerCase(), f);
 
     }
-
+    @Override
     public Filme buscarPorTitulo(String titulo) throws filmeNaoEncontradoException {
         Filme f = listaDeFilmes.get(titulo.toLowerCase());
 
@@ -27,7 +29,7 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
         }
         return f;
     }
-
+    @Override
     public String removerPorAno(int ano) throws filmeNaoEncontradoException {
         String remover = null;
         for (Filme f : listaDeFilmes.values()) {
@@ -43,7 +45,7 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
 
         throw new filmeNaoEncontradoException("Não há filmes do ano " + ano + " no catálogo.");
     }
-
+    @Override
     public String adicionarAosFavoritos(String titulo) throws filmeNaoEncontradoException {
 
         Filme f = listaDeFilmes.get(titulo.toLowerCase());
@@ -57,6 +59,7 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
 
 
     }
+    @Override
     public void listarFavoritos() {
         if (filmesFavoritos.isEmpty()) {
             System.out.println("Sua lista de favoritos está vazia.");
@@ -69,13 +72,36 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
         }
     }
 
+    @Override
+    public String marcarComoAssistido(String titulo) throws filmeNaoEncontradoException {
+        Filme f = buscarPorTitulo(titulo);
+        this.historicoAssistidos.put(f.getTitulo().toLowerCase(), f);
+        return "O filme " + f.getTitulo() + " foi marcado como assistido!";
+    }
+
+    @Override
+    public void listarAssistidos() {
+        if (historicoAssistidos.isEmpty()) {
+            System.out.println("Seu histórico de assistidos está vazio.");
+        } else {
+            System.out.println("\n--- HISTÓRICO DE ASSISTIDOS ---");
+            for (Filme f : historicoAssistidos.values()) {
+                System.out.println(f.ExibirDetalhes());
+                System.out.println("-----------------------");
+            }
+        }
+    }
+    @Override
+    public Map<String, Filme> getHistoricoAssistidos() {
+        return historicoAssistidos;
+    }
+    @Override
     public void salvarDados() throws IOException {
         GravadorDeDados gravador = new GravadorDeDados();
         gravador.salvar(this.listaDeFilmes, this.filmesFavoritos);
     }
 
-    public void
-
+    @Override
     public void recuperarDados() throws IOException, ClassNotFoundException {
         GravadorDeDados gravador = new GravadorDeDados();
         this.listaDeFilmes = gravador.recuperarCatalogo();
