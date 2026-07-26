@@ -128,8 +128,6 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
         return historicoAssistidos;
     }
 
-    // --- MÉTODOS DE PERSISTÊNCIA ATUALIZADOS ---
-
     @Override
     public void salvarDados() throws IOException {
         GravadorDeDados gravador = new GravadorDeDados();
@@ -146,9 +144,6 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
         // Recupera a lista de desejos do arquivo 'desejos.dat'
         this.listaDeDesejos = gravador.recuperarDesejos();
     }
-<<<<<<< HEAD
-}
-=======
     @Override
     public void avaliarFilme(String titulo, double nota) throws filmeNaoEncontradoException, NotaDeAvaliacaoInvalidaException {
         if (nota < 0 || nota > 10) {
@@ -172,5 +167,3 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
         return resultado;
     }
 }
-
->>>>>>> 24915a35b8422e3da3cd769b52e2828fcda9f363

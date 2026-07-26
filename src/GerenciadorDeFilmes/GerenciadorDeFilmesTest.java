@@ -81,13 +81,10 @@ public class GerenciadorDeFilmesTest {
         GerenciadorDeFilmes gerenciador = new GerenciadorDeFilmes();
         Filme f = new Filme("Inception", "Christopher Nolan", 2010, 148);
         gerenciador.adicionarFilme(f);
-
-<<<<<<< HEAD
         assertThrows(filmeNaoEncontradoException.class,
                 () -> {
                     gerenciador.adicionarAosFavoritos("Filme Fantasma");
                 });
-=======
         gerenciador.avaliarFilme("Inception", 9.5);
 
         assertEquals(9.5, gerenciador.buscarPorTitulo("Inception").getAvaliacao(), 0.001);
@@ -100,7 +97,6 @@ public class GerenciadorDeFilmesTest {
         gerenciador.adicionarFilme(f);
 
         gerenciador.avaliarFilme("Interstellar", 11.0);
->>>>>>> 24915a35b8422e3da3cd769b52e2828fcda9f363
     }
     @Test
     public void testMarcarComoAssistidoComSucesso() throws filmeNaoEncontradoException {

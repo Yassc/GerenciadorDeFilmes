@@ -4,22 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="0ffc0961-3773-469d-9c7d-47e038059ceb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/catalogo.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favoritos.dat" afterDir="false" />
+    <list default="true" id="0ffc0961-3773-469d-9c7d-47e038059ceb" name="Changes" comment="Adição da funcionalidade de avaliação de filmes, exeção de nota inválida e criação do teste para esta função. além disso, ajeitei o nome do pacote, porque não estava condizente.">
       <change beforePath="$PROJECT_DIR$/.idea/GerenciadorDeFilmes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GerenciadorDeFilmes.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/Filme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorDeFilmes/Filme.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GerenciadorDeFilmesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GravadorDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorDeFilmes/GravadorDeDados.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GerenciadorDeFilmes/InterfaceGerenciador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorDeFilmes/InterfaceGerenciador.java" afterDir="false" />
     </list>
-=======
-    <list default="true" id="0ffc0961-3773-469d-9c7d-47e038059ceb" name="Changes" comment="Adição da funcionalidade de avaliação de filmes, exeção de nota inválida e criação do teste para esta função. além disso, ajeitei o nome do pacote, porque não estava condizente." />
->>>>>>> 24915a35b8422e3da3cd769b52e2828fcda9f363
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,28 +34,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
+    &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
     &quot;assignee&quot;: &quot;Yassc&quot;
-  }
-}</component>
-<<<<<<< HEAD
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Yassc/GerenciadorDeFilmes.git",
-    "accountId": "0cf7d481-c9c6-48cc-bb2a-332792daa6a4"
-=======
+    }
+    }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Yassc/GerenciadorDeFilmes.git&quot;,
-    &quot;accountId&quot;: &quot;f82e27e2-a34d-4791-a0d6-cc9c45b22613&quot;
->>>>>>> 24915a35b8422e3da3cd769b52e2828fcda9f363
+    &quot;accountId&quot;: &quot;0cf7d481-c9c6-48cc-bb2a-332792daa6a4&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0,
-  &quot;fromUser&quot;: false
 }</component>
+  <component name="ProjectColorInfo">{
+    &quot;associatedIndex&quot;: 0,
+    &quot;fromUser&quot;: false
+    }</component>
   <component name="ProjectId" id="3H2oMrOWXvhDRiPMCHcOQ7RV8Gv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -83,12 +69,8 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-<<<<<<< HEAD
-    "git-widget-placeholder": "minha-parte",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-=======
-    "git-widget-placeholder": "avalicao-de-filmes",
->>>>>>> 24915a35b8422e3da3cd769b52e2828fcda9f363
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/yasmi/OneDrive/Documentos/yas/POO/GerenciadorDeFilmes/src",
     "node.js.detected.package.eslint": "true",
@@ -96,11 +78,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-<<<<<<< HEAD
     "project.structure.last.edited": "Project",
-=======
-    "project.structure.last.edited": "Libraries",
->>>>>>> 24915a35b8422e3da3cd769b52e2828fcda9f363
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0"
   }
@@ -229,11 +207,8 @@
       </map>
     </option>
   </component>
-<<<<<<< HEAD
-=======
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adição da funcionalidade de avaliação de filmes, exeção de nota inválida e criação do teste para esta função. além disso, ajeitei o nome do pacote, porque não estava condizente." />
     <option name="LAST_COMMIT_MESSAGE" value="Adição da funcionalidade de avaliação de filmes, exeção de nota inválida e criação do teste para esta função. além disso, ajeitei o nome do pacote, porque não estava condizente." />
   </component>
->>>>>>> 24915a35b8422e3da3cd769b52e2828fcda9f363
 </project>

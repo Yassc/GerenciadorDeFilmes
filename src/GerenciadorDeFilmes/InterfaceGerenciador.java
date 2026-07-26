@@ -68,7 +68,6 @@ public interface InterfaceGerenciador {
      * @throws ClassNotFoundException Se a classe dos objetos gravados não for identificada.
      */
     void recuperarDados() throws IOException, ClassNotFoundException;
-<<<<<<< HEAD
     /**
      * Adiciona um filme à lista de desejos.
      */
@@ -83,9 +82,7 @@ public interface InterfaceGerenciador {
      * Retorna o mapa da lista de desejos.
      */
     java.util.Map<String, Filme> getListaDeDesejos();
-=======
 
     void avaliarFilme(String titulo, double nota) throws filmeNaoEncontradoException, NotaDeAvaliacaoInvalidaException;
     String buscarFilmesPorNotaMinima(double notaMinima);
->>>>>>> 24915a35b8422e3da3cd769b52e2828fcda9f363
 }
