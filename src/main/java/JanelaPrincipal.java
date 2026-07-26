@@ -1,5 +1,3 @@
-package GerenciadorDeFilmes;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -88,7 +86,7 @@ public class JanelaPrincipal extends JFrame {
                     try {
                         Filme f = sistema.buscarPorTitulo(busca);
                         JOptionPane.showMessageDialog(JanelaPrincipal.this, f.toString(), "Filme Encontrado", JOptionPane.INFORMATION_MESSAGE);
-                    } catch (filmeNaoEncontradoException ex) {
+                    } catch (FilmeNaoEncontradoException ex) {
                         JOptionPane.showMessageDialog(JanelaPrincipal.this, "Erro: " + ex.getMessage(), "Não Encontrado", JOptionPane.WARNING_MESSAGE);
                     }
                 }
@@ -106,7 +104,7 @@ public class JanelaPrincipal extends JFrame {
                         JOptionPane.showMessageDialog(JanelaPrincipal.this, resultado);
                     } catch (NumberFormatException ex) {
                         JOptionPane.showMessageDialog(JanelaPrincipal.this, "Digite um ano válido.");
-                    } catch (filmeNaoEncontradoException ex) {
+                    } catch (FilmeNaoEncontradoException ex) {
                         JOptionPane.showMessageDialog(JanelaPrincipal.this, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                     }
                 }
@@ -136,7 +134,7 @@ public class JanelaPrincipal extends JFrame {
                         JOptionPane.showMessageDialog(JanelaPrincipal.this, "Filme '" + titulo + "' avaliado com sucesso com nota " + nota + "!");
                     } catch (NumberFormatException ex) {
                         JOptionPane.showMessageDialog(JanelaPrincipal.this, "Erro: A nota precisa ser um número!", "Erro de Input", JOptionPane.ERROR_MESSAGE);
-                    } catch (filmeNaoEncontradoException | NotaDeAvaliacaoInvalidaException ex) {
+                    } catch (FilmeNaoEncontradoException | NotaDeAvaliacaoInvalidaException ex) {
                         JOptionPane.showMessageDialog(JanelaPrincipal.this, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                     }
                 }

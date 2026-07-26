@@ -1,5 +1,3 @@
-package GerenciadorDeFilmes;
-
 import java.io.IOException;
 
 /**
@@ -18,33 +16,33 @@ public interface InterfaceGerenciador {
      * Busca um filme no catálogo através do seu título.
      * @param titulo O título do filme buscado.
      * @return O objeto Filme correspondente.
-     * @throws filmeNaoEncontradoException Caso o filme não exista no sistema.
+     * @throws FilmeNaoEncontradoException Caso o filme não exista no sistema.
      */
-    Filme buscarPorTitulo(String titulo) throws filmeNaoEncontradoException;
+    Filme buscarPorTitulo(String titulo) throws FilmeNaoEncontradoException;
 
     /**
      * Remove o primeiro filme encontrado que corresponda ao ano enviado.
      * @param ano O ano do filme que deve ser deletado.
      * @return Mensagem de sucesso na remoção.
-     * @throws filmeNaoEncontradoException Caso nenhum filme do ano seja localizado.
+     * @throws FilmeNaoEncontradoException Caso nenhum filme do ano seja localizado.
      */
-    String removerPorAno(int ano) throws filmeNaoEncontradoException;
+    String removerPorAno(int ano) throws FilmeNaoEncontradoException;
 
     /**
      * Vincula um filme cadastrado à lista de favoritos do usuário.
      * @param titulo O título do filme a ser favoritado.
      * @return Mensagem de sucesso na operação.
-     * @throws filmeNaoEncontradoException Caso o filme não exista no catálogo geral.
+     * @throws FilmeNaoEncontradoException Caso o filme não exista no catálogo geral.
      */
-    String adicionarAosFavoritos(String titulo) throws filmeNaoEncontradoException;
+    String adicionarAosFavoritos(String titulo) throws FilmeNaoEncontradoException;
 
     /**
      * Marca um filme do catálogo como assistido e o adiciona ao histórico.
      * @param titulo O título do filme assistido.
      * @return Mensagem de confirmação da operação.
-     * @throws filmeNaoEncontradoException Caso o filme não exista no catálogo.
+     * @throws FilmeNaoEncontradoException Caso o filme não exista no catálogo.
      */
-    String marcarComoAssistido(String titulo) throws filmeNaoEncontradoException;
+    String marcarComoAssistido(String titulo) throws FilmeNaoEncontradoException;
 
     /**
      * Imprime na tela todos os filmes do histórico de assistidos.
@@ -71,7 +69,7 @@ public interface InterfaceGerenciador {
     /**
      * Adiciona um filme à lista de desejos.
      */
-    String adicionarAListaDeDesejos(String titulo) throws filmeNaoEncontradoException;
+    String adicionarAListaDeDesejos(String titulo) throws FilmeNaoEncontradoException;
 
     /**
      * Lista todos os filmes da lista de desejos.
@@ -83,6 +81,6 @@ public interface InterfaceGerenciador {
      */
     java.util.Map<String, Filme> getListaDeDesejos();
 
-    void avaliarFilme(String titulo, double nota) throws filmeNaoEncontradoException, NotaDeAvaliacaoInvalidaException;
+    void avaliarFilme(String titulo, double nota) throws FilmeNaoEncontradoException, NotaDeAvaliacaoInvalidaException;
     String buscarFilmesPorNotaMinima(double notaMinima);
 }

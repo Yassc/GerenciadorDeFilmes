@@ -1,5 +1,5 @@
-public class filmeNaoEncontradoException extends Exception {
-    public filmeNaoEncontradoException(String mensagem) {
+public class FilmeNaoEncontradoException extends Exception {
+    public FilmeNaoEncontradoException(String mensagem) {
         super(mensagem);
     }
 }

@@ -1,5 +1,3 @@
-package GerenciadorDeFilmes;
-
 import java.io.*;
 import java.util.Map;
 
