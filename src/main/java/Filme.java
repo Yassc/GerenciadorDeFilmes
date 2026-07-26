@@ -1,5 +1,3 @@
-package GerenciadorDeFilmes;
-
 public class Filme implements java.io.Serializable {
 
     private String titulo;

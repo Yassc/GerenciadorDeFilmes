@@ -1,5 +1,3 @@
-package GerenciadorDeFilmes;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,17 +21,17 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
     }
 
     @Override
-    public Filme buscarPorTitulo(String titulo) throws filmeNaoEncontradoException {
+    public Filme buscarPorTitulo(String titulo) throws FilmeNaoEncontradoException {
         Filme f = listaDeFilmes.get(titulo.toLowerCase());
 
         if (f == null) {
-            throw new filmeNaoEncontradoException(titulo);
+            throw new FilmeNaoEncontradoException(titulo);
         }
         return f;
     }
 
     @Override
-    public String removerPorAno(int ano) throws filmeNaoEncontradoException {
+    public String removerPorAno(int ano) throws FilmeNaoEncontradoException {
         String remover = null;
         for (Filme f : listaDeFilmes.values()) {
             if (f.getAno() == ano) {
@@ -46,15 +44,15 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
             return "Filme do ano " + ano + " removido com sucesso!";
         }
 
-        throw new filmeNaoEncontradoException("Não há filmes do ano " + ano + " no catálogo.");
+        throw new FilmeNaoEncontradoException("Não há filmes do ano " + ano + " no catálogo.");
     }
 
     @Override
-    public String adicionarAosFavoritos(String titulo) throws filmeNaoEncontradoException {
+    public String adicionarAosFavoritos(String titulo) throws FilmeNaoEncontradoException {
         Filme f = listaDeFilmes.get(titulo.toLowerCase());
 
         if (f == null) {
-            throw new filmeNaoEncontradoException("O filme " + titulo + " não existe no catálogo.");
+            throw new FilmeNaoEncontradoException("O filme " + titulo + " não existe no catálogo.");
         }
 
         this.filmesFavoritos.put(f.getTitulo().toLowerCase(), f);
@@ -75,7 +73,7 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
     }
 
     @Override
-    public String marcarComoAssistido(String titulo) throws filmeNaoEncontradoException {
+    public String marcarComoAssistido(String titulo) throws FilmeNaoEncontradoException {
         Filme f = buscarPorTitulo(titulo);
         this.historicoAssistidos.put(f.getTitulo().toLowerCase(), f);
         return "O filme " + f.getTitulo() + " foi marcado como assistido!";
@@ -95,11 +93,11 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
     }
 
     @Override
-    public String adicionarAListaDeDesejos(String titulo) throws filmeNaoEncontradoException {
+    public String adicionarAListaDeDesejos(String titulo) throws FilmeNaoEncontradoException {
         Filme f = listaDeFilmes.get(titulo.toLowerCase());
 
         if (f == null) {
-            throw new filmeNaoEncontradoException("O filme " + titulo + " não existe no catálogo.");
+            throw new FilmeNaoEncontradoException("O filme " + titulo + " não existe no catálogo.");
         }
 
         this.listaDeDesejos.put(f.getTitulo().toLowerCase(), f);
@@ -145,7 +143,7 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
         this.listaDeDesejos = gravador.recuperarDesejos();
     }
     @Override
-    public void avaliarFilme(String titulo, double nota) throws filmeNaoEncontradoException, NotaDeAvaliacaoInvalidaException {
+    public void avaliarFilme(String titulo, double nota) throws FilmeNaoEncontradoException, NotaDeAvaliacaoInvalidaException {
         if (nota < 0 || nota > 10) {
             throw new NotaDeAvaliacaoInvalidaException("A nota deve ser um valor entre 0 e 10.");
         }

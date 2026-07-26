@@ -1,12 +1,10 @@
-package GerenciadorDeFilmes;
-
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class GerenciadorDeFilmesTest {
 
     @Test
-    public void testAdicionarEBuscarFilmeComSucesso() throws filmeNaoEncontradoException {
+    public void testAdicionarEBuscarFilmeComSucesso() throws FilmeNaoEncontradoException {
         GerenciadorDeFilmes gerenciador = new GerenciadorDeFilmes();
         Filme f1 = new Filme("Avatar", "James Cameron", 2009, 162);
 
@@ -19,7 +17,7 @@ public class GerenciadorDeFilmesTest {
     }
 
     @Test
-    public void testSobrescritaOuAtualizacao() throws filmeNaoEncontradoException {
+    public void testSobrescritaOuAtualizacao() throws FilmeNaoEncontradoException {
         GerenciadorDeFilmes gerenciador = new GerenciadorDeFilmes();
         Filme f2 = new Filme("matrix", "Lana e Lilly Wachowski", 1999, 136);
         gerenciador.adicionarFilme(f2);
@@ -31,7 +29,7 @@ public class GerenciadorDeFilmesTest {
     }
 
     @Test
-    public void testIgnorarLetraMinuscula() throws filmeNaoEncontradoException {
+    public void testIgnorarLetraMinuscula() throws FilmeNaoEncontradoException {
         GerenciadorDeFilmes gerenciador = new GerenciadorDeFilmes();
         Filme f4 = new Filme("La la land", "Damien Chazelle", 2016, 128);
         gerenciador.adicionarFilme(f4);
@@ -41,14 +39,14 @@ public class GerenciadorDeFilmesTest {
         assertEquals("Damien Chazelle", encontrado.getDiretor());
     }
 
-    @Test(expected = filmeNaoEncontradoException.class)
-    public void testBuscarFilmeInexistenteLancaExcecao() throws filmeNaoEncontradoException {
+    @Test(expected = FilmeNaoEncontradoException.class)
+    public void testBuscarFilmeInexistenteLancaExcecao() throws FilmeNaoEncontradoException {
         GerenciadorDeFilmes gerenciador = new GerenciadorDeFilmes();
         gerenciador.buscarPorTitulo("Batman");
     }
 
     @Test
-    public void testRemoverPorAnoComSucesso() throws filmeNaoEncontradoException {
+    public void testRemoverPorAnoComSucesso() throws FilmeNaoEncontradoException {
         GerenciadorDeFilmes gerenciador = new GerenciadorDeFilmes();
         Filme f5 = new Filme("Percy Jackson e o Ladrão de Raios", "Chris Columbus", 2010, 118);
         gerenciador.adicionarFilme(f5);
@@ -59,7 +57,7 @@ public class GerenciadorDeFilmesTest {
     }
 
     @Test
-    public void testAdicionarAosFavoritosComSucesso() throws filmeNaoEncontradoException {
+    public void testAdicionarAosFavoritosComSucesso() throws FilmeNaoEncontradoException {
         GerenciadorDeFilmes gerenciador = new GerenciadorDeFilmes();
         Filme f6 = new Filme("Coraline", "Henry Selick", 2009, 100);
         gerenciador.adicionarFilme(f6);
@@ -70,18 +68,18 @@ public class GerenciadorDeFilmesTest {
         assertEquals("O filme Coraline foi adicionado aos seus favoritos!", mensagem);
     }
 
-    @Test(expected = filmeNaoEncontradoException.class)
-    public void testAdicionarFilmeFantasmaAosFavoritosLancaExcecao() throws filmeNaoEncontradoException {
+    @Test(expected = FilmeNaoEncontradoException.class)
+    public void testAdicionarFilmeFantasmaAosFavoritosLancaExcecao() throws FilmeNaoEncontradoException {
         GerenciadorDeFilmes gerenciador = new GerenciadorDeFilmes();
         gerenciador.adicionarAosFavoritos("Filme Fantasma");
     }
 
     @Test
-    public void testAvaliarFilmeComSucesso() throws filmeNaoEncontradoException, NotaDeAvaliacaoInvalidaException {
+    public void testAvaliarFilmeComSucesso() throws FilmeNaoEncontradoException, NotaDeAvaliacaoInvalidaException {
         GerenciadorDeFilmes gerenciador = new GerenciadorDeFilmes();
         Filme f = new Filme("Inception", "Christopher Nolan", 2010, 148);
         gerenciador.adicionarFilme(f);
-        assertThrows(filmeNaoEncontradoException.class,
+        assertThrows(FilmeNaoEncontradoException.class,
                 () -> {
                     gerenciador.adicionarAosFavoritos("Filme Fantasma");
                 });
@@ -91,7 +89,7 @@ public class GerenciadorDeFilmesTest {
     }
 
     @Test(expected = NotaDeAvaliacaoInvalidaException.class)
-    public void testAvaliarFilmeComNotaInvalidaLancaExcecao() throws filmeNaoEncontradoException, NotaDeAvaliacaoInvalidaException {
+    public void testAvaliarFilmeComNotaInvalidaLancaExcecao() throws FilmeNaoEncontradoException, NotaDeAvaliacaoInvalidaException {
         GerenciadorDeFilmes gerenciador = new GerenciadorDeFilmes();
         Filme f = new Filme("Interstellar", "Christopher Nolan", 2014, 169);
         gerenciador.adicionarFilme(f);
@@ -99,7 +97,7 @@ public class GerenciadorDeFilmesTest {
         gerenciador.avaliarFilme("Interstellar", 11.0);
     }
     @Test
-    public void testMarcarComoAssistidoComSucesso() throws filmeNaoEncontradoException {
+    public void testMarcarComoAssistidoComSucesso() throws FilmeNaoEncontradoException {
         GerenciadorDeFilmes gerenciador = new GerenciadorDeFilmes();
         Filme f = new Filme("Matrix", "Wachowski", 1999, 136);
         gerenciador.adicionarFilme(f);
