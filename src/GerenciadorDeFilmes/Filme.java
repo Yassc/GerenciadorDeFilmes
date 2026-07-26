@@ -85,8 +85,12 @@ public class Filme implements java.io.Serializable{
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+<<<<<<< HEAD
+}
+=======
 
     public double getAvaliacao() {return avaliacao;}
 
     public void setAvaliacao(double avaliacao) {this.avaliacao = avaliacao;}
 }
+>>>>>>> 24915a35b8422e3da3cd769b52e2828fcda9f363

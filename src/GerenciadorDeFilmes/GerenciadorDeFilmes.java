@@ -8,18 +8,20 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
     private Map<String, Filme> listaDeFilmes;
     private Map<String, Filme> filmesFavoritos;
     private Map<String, Filme> historicoAssistidos;
-
+    private Map<String, Filme> listaDeDesejos;
 
     public GerenciadorDeFilmes() {
         this.listaDeFilmes = new HashMap<>();
         this.filmesFavoritos = new HashMap<>();
         this.historicoAssistidos = new HashMap<>();
+        this.listaDeDesejos = new HashMap<>();
     }
-    @Override
-    public void adicionarFilme(Filme f){
-        this.listaDeFilmes.put(f.getTitulo().toLowerCase(), f);
 
+    @Override
+    public void adicionarFilme(Filme f) {
+        this.listaDeFilmes.put(f.getTitulo().toLowerCase(), f);
     }
+
     @Override
     public Filme buscarPorTitulo(String titulo) throws filmeNaoEncontradoException {
         Filme f = listaDeFilmes.get(titulo.toLowerCase());
@@ -29,13 +31,14 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
         }
         return f;
     }
+
     @Override
     public String removerPorAno(int ano) throws filmeNaoEncontradoException {
         String remover = null;
         for (Filme f : listaDeFilmes.values()) {
             if (f.getAno() == ano) {
                 remover = f.getTitulo().toLowerCase();
-               break;
+                break;
             }
         }
         if (remover != null) {
@@ -45,20 +48,19 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
 
         throw new filmeNaoEncontradoException("Não há filmes do ano " + ano + " no catálogo.");
     }
+
     @Override
     public String adicionarAosFavoritos(String titulo) throws filmeNaoEncontradoException {
-
         Filme f = listaDeFilmes.get(titulo.toLowerCase());
 
-        if(f == null){
+        if (f == null) {
             throw new filmeNaoEncontradoException("O filme " + titulo + " não existe no catálogo.");
         }
 
         this.filmesFavoritos.put(f.getTitulo().toLowerCase(), f);
         return "O filme " + titulo + " foi adicionado aos seus favoritos!";
-
-
     }
+
     @Override
     public void listarFavoritos() {
         if (filmesFavoritos.isEmpty()) {
@@ -91,14 +93,48 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
             }
         }
     }
+
     @Override
+    public String adicionarAListaDeDesejos(String titulo) throws filmeNaoEncontradoException {
+        Filme f = listaDeFilmes.get(titulo.toLowerCase());
+
+        if (f == null) {
+            throw new filmeNaoEncontradoException("O filme " + titulo + " não existe no catálogo.");
+        }
+
+        this.listaDeDesejos.put(f.getTitulo().toLowerCase(), f);
+        return "O filme " + f.getTitulo() + " foi adicionado à sua Lista de Desejos!";
+    }
+
+    @Override
+    public void listarListaDeDesejos() {
+        if (listaDeDesejos.isEmpty()) {
+            System.out.println("Sua lista de desejos está vazia.");
+        } else {
+            System.out.println("\n--- LISTA DE DESEJOS ---");
+            for (Filme f : listaDeDesejos.values()) {
+                System.out.println(f.ExibirDetalhes());
+                System.out.println("-----------------------");
+            }
+        }
+    }
+
+    @Override
+    public Map<String, Filme> getListaDeDesejos() {
+        return this.listaDeDesejos;
+    }
+
     public Map<String, Filme> getHistoricoAssistidos() {
         return historicoAssistidos;
     }
+
+    // --- MÉTODOS DE PERSISTÊNCIA ATUALIZADOS ---
+
     @Override
     public void salvarDados() throws IOException {
         GravadorDeDados gravador = new GravadorDeDados();
-        gravador.salvar(this.listaDeFilmes, this.filmesFavoritos);
+        // Passa também a listaDeDesejos para o salvamento
+        gravador.salvar(this.listaDeFilmes, this.filmesFavoritos, this.listaDeDesejos);
     }
 
 
@@ -107,7 +143,12 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
         GravadorDeDados gravador = new GravadorDeDados();
         this.listaDeFilmes = gravador.recuperarCatalogo();
         this.filmesFavoritos = gravador.recuperarFavoritos();
+        // Recupera a lista de desejos do arquivo 'desejos.dat'
+        this.listaDeDesejos = gravador.recuperarDesejos();
     }
+<<<<<<< HEAD
+}
+=======
     @Override
     public void avaliarFilme(String titulo, double nota) throws filmeNaoEncontradoException, NotaDeAvaliacaoInvalidaException {
         if (nota < 0 || nota > 10) {
@@ -132,3 +173,4 @@ public class GerenciadorDeFilmes implements InterfaceGerenciador {
     }
 }
 
+>>>>>>> 24915a35b8422e3da3cd769b52e2828fcda9f363
